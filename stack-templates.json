@@ -48,6 +48,70 @@
       },
       "title": "Zerotier",
       "type": 3
+    },
+    {
+      "categories": [
+        "media"
+      ],
+      "env": [
+        {
+          "default": "nightly",
+          "label": "Docker image tag",
+          "name": "YTDL_TAG"
+        },
+        {
+          "default": "1000",
+          "label": "GID to use the container as",
+          "name": "GID"
+        },
+        {
+          "default": "1000",
+          "label": "UID to use the container as",
+          "name": "UID"
+        },
+        {
+          "label": "Hostname of the YoutubeDL-Material frontend",
+          "name": "YTDL_HOSTNAME"
+        },
+        {
+          "default": "",
+          "label": "Middlewares to attach to the Traefik proxy",
+          "name": "TRAEFIK_MIDDLEWARES"
+        },
+        {
+          "label": "Youtube API key",
+          "name": "ytdl_youtube_api_key"
+        },
+        {
+          "default": "appdata",
+          "label": "YoutubeDL-Material Appdata volume",
+          "name": "APPDATA_VOLUME"
+        },
+        {
+          "default": "audio",
+          "label": "Audio downloads volume",
+          "name": "AUDIO_VOLUME"
+        },
+        {
+          "default": "video",
+          "label": "Video downloads volume",
+          "name": "VIDEO_VOLUME"
+        },
+        {
+          "default": "subscriptions",
+          "label": "Playlist subscriptions volume",
+          "name": "SUBSCRIPTIONS_VOLUME"
+        }
+      ],
+      "description": "Frontend for youtube-dl, used for downloading audio/video from Youtube, Twitch and other media sites.",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "stacks/youtubedl-material/docker-stack.yml",
+        "url": "https://github.com/lzpreslav/portainer-stacks"
+      },
+      "title": "YoutubeDL-Material",
+      "type": 3
     }
   ]
 }
