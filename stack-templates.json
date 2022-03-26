@@ -112,6 +112,49 @@
       },
       "title": "YoutubeDL-Material",
       "type": 3
+    },
+    {
+      "categories": [
+        "networking"
+      ],
+      "env": [
+        {
+          "default": "5",
+          "label": "Docker image tag",
+          "name": "WG_EASY_TAG"
+        },
+        {
+          "label": "Hostname of the wg-easy frontend",
+          "name": "WG_EASY_HOSTNAME"
+        },
+        {
+          "label": "Hostname of the Wireguard VPN",
+          "name": "WG_HOST"
+        },
+        {
+          "label": "Default DNS server inside the VPN",
+          "name": "WG_DEFAULT_DNS"
+        },
+        {
+          "default": "",
+          "label": "Middlewares to attach to the Traefik proxy",
+          "name": "TRAEFIK_MIDDLEWARES"
+        },
+        {
+          "default": "wireguard",
+          "label": "Wireguard config volume",
+          "name": "WG_EASY_VOLUME"
+        }
+      ],
+      "description": "Frontend for Wireguard",
+      "logo": "https://cdn.freelogovectors.net/wp-content/uploads/2021/10/wireguard-logo-freelogovectors.net_.png",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "stacks/wg-easy/docker-stack.yml",
+        "url": "https://github.com/lzpreslav/portainer-stacks"
+      },
+      "title": "wg-easy",
+      "type": 3
     }
   ]
 }

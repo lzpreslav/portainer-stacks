@@ -1,0 +1,33 @@
+---
+version: "3.9"
+
+services:
+  wg-easy:
+    image: weejewel/wg-easy:${WG_EASY_TAG}
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      WG_HOST:
+      WG_DEFAULT_DNS:
+    labels:
+      traefik.enable: true
+      traefik.http.routers.wg-easy.entrypoints: websecure
+      traefik.http.routers.wg-easy.middlewares: ${TRAEFIK_MIDDLEWARES}
+      traefik.http.routers.wg-easy.rule: Host(`${WG_EASY_HOSTNAME}`)
+      traefik.http.routers.wg-easy.service: wg-easy
+      traefik.http.routers.wg-easy.tls: true
+      traefik.http.services.wg-easy.loadbalancer.server.port: 51821
+      traefik.udp.routers.wireguard.entrypoints: wireguard
+      traefik.udp.routers.wireguard.service: wireguard
+      traefik.udp.services.wireguard.loadbalancer.server.port: 51820
+    networks:
+      - traefik
+    restart: always
+    volumes:
+      - ${WG_EASY_VOLUME}:/etc/wireguard
+networks:
+  traefik:
+    external: true
+volumes:
+  wireguard:
