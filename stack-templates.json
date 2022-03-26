@@ -1,0 +1,27 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "categories": [
+        "performance",
+        "networking"
+      ],
+      "env": [
+        {
+          "default": "3.9-r1-hc",
+          "label": "Docker image tag",
+          "name": "IPERF_TAG"
+        }
+      ],
+      "description": "Cross-platform tool for network performance measurement and tuning",
+      "note": "Requires Traefik with iperftcp and iperfudp entrypoints set up. Based on mlabbe/iperf3 (MIT license).",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "stacks/iperf/docker-stack.yml",
+        "url": "https://github.com/lzpreslav/portainer-stacks"
+      },
+      "title": "iperf3 server",
+      "type": 3
+    }
+  ]
+}
