@@ -1,0 +1,18 @@
+---
+version: "3.9"
+
+services:
+  zerotier:
+    image: zerotier/zerotier:${ZEROTIER_TAG}
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    command: ["${ZEROTIER_NETWORK}"]
+    devices:
+      - /dev/net/tun
+    network_mode: host
+    volumes:
+      - zerotier:/var/lib/zerotier-one
+    restart: always
+volumes:
+  zerotier:
