@@ -35,6 +35,7 @@
         {
           "default": "latest",
           "label": "Docker image tag",
+          "preset": true,
           "name": "ZEROTIER_TAG"
         }
       ],
