@@ -225,17 +225,20 @@
         {
           "default": "1.25.8",
           "label": "Docker image tag",
-          "name": "PLEX_TAG"
+          "name": "PLEX_TAG",
+          "preset": true
         },
         {
           "default": "1000",
           "label": "GID to use the container as",
-          "name": "PGID"
+          "name": "PGID",
+          "preset": true
         },
         {
           "default": "1000",
           "label": "UID to use the container as",
-          "name": "PUID"
+          "name": "PUID",
+          "preset": true
         },
         {
           "default": "config",

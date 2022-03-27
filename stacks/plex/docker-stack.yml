@@ -3,7 +3,7 @@ version: "3.9"
 
 services:
   plex:
-    image: lscr.io/linuxserver/plex:${PLEX_TAG}
+    image: lscr.io/linuxserver/plex:${PLEX_TAG:-1.25.8}
     environment:
       PGID:
       PUID:
