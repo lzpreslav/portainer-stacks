@@ -165,22 +165,26 @@
         {
           "default": "4.4.1",
           "label": "Docker image tag",
-          "name": "QBITTORRENT_TAG"
+          "name": "QBITTORRENT_TAG",
+          "preset": true
         },
         {
           "default": "1000",
           "label": "GID to use the container as",
-          "name": "PGID"
+          "name": "PGID",
+          "preset": true
         },
         {
           "default": "1000",
           "label": "UID to use the container as",
-          "name": "PUID"
+          "name": "PUID",
+          "preset": true
         },
         {
           "default": "Etc/UTC",
           "label": "Timezone",
-          "name": "TZ"
+          "name": "TZ",
+          "preset": true
         },
         {
           "label": "Hostname of the qBittorrent frontend",
@@ -189,7 +193,8 @@
         {
           "default": "",
           "label": "Middlewares to attach to the Traefik proxy",
-          "name": "TRAEFIK_MIDDLEWARES"
+          "name": "TRAEFIK_MIDDLEWARES",
+          "preset": true
         },
         {
           "default": "config",
@@ -200,11 +205,6 @@
           "default": "downloads",
           "label": "qBittorrent downloads volume",
           "name": "DOWNLOADS_VOLUME"
-        },
-        {
-          "default": "1G",
-          "label": "Max memory that qBittorrent can use",
-          "name": "QBITTORRENT_MEMORY_LIMIT"
         }
       ],
       "description": "Cross-platform free and open-source BitTorrent client",

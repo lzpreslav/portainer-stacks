@@ -3,13 +3,13 @@ version: "3.9"
 
 services:
   qbittorrent:
-    image: linuxserver/qbittorrent:${QBITTORRENT_TAG}
+    image: linuxserver/qbittorrent:${QBITTORRENT_TAG:-4.4.1}
     deploy:
       resources:
         limits:
-          memory: ${QBITTORRENT_MEMORY_LIMIT}
+          memory: ${QBITTORRENT_MEMORY_LIMITS:-1G}
         reservations:
-          memory: 500M
+          memory: ${QBITTORRENT_MEMORY_REQUESTS:-500M}
     environment:
       PUID:
       PGID:
