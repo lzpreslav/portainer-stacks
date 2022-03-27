@@ -1,0 +1,18 @@
+---
+version: "3.9"
+
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:${PLEX_TAG}
+    environment:
+      PGID:
+      PUID:
+      VERSION: docker
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ${CONFIG_VOLUME}:/config
+      - ${MEDIA_VOLUME}:/media
+volumes:
+  config:
+  media:

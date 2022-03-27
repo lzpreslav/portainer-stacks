@@ -215,6 +215,47 @@
       },
       "title": "qBittorrent",
       "type": 3
+    },
+    {
+      "categories": [
+        "media"
+      ],
+      "env": [
+        {
+          "default": "1.25.8",
+          "label": "Docker image tag",
+          "name": "PLEX_TAG"
+        },
+        {
+          "default": "1000",
+          "label": "GID to use the container as",
+          "name": "PGID"
+        },
+        {
+          "default": "1000",
+          "label": "UID to use the container as",
+          "name": "PUID"
+        },
+        {
+          "default": "config",
+          "label": "Plex config volume",
+          "name": "CONFIG_VOLUME"
+        },
+        {
+          "default": "media",
+          "label": "Plex media volume, should be a bind or NFS mount",
+          "name": "MEDIA_VOLUME"
+        }
+      ],
+      "description": "Stores, organizes, and streams all content, while the clients are the playback applications running on myriad devices and web browsers",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Plex_favicon.png",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "stacks/plex/docker-stack.yml",
+        "url": "https://github.com/lzpreslav/portainer-stacks"
+      },
+      "title": "Plex Media Server",
+      "type": 3
     }
   ]
 }
