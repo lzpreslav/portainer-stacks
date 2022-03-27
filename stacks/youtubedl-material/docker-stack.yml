@@ -2,8 +2,8 @@
 version: "3.9"
 
 services:
-  ytdl_material:
-    image: tzahi12345/youtubedl-material:${YTDL_TAG}
+  ytdlm:
+    image: tzahi12345/youtubedl-material:${YTDLM_TAG:-nightly}
     healthcheck:
       interval: 15s
       retries: 3
@@ -23,7 +23,7 @@ services:
       ytdl_default_theme: "dark"
       ytdl_mongodb_connection_string: "mongodb://mongodb:27017"
       ytdl_twitch_auto_download_chat: "true"
-      ytdl_url: "https://${YTDL_HOSTNAME}"
+      ytdl_url: "https://${YTDLM_HOSTNAME}"
       ytdl_use_default_downloading_agent: "false"
       ytdl_use_local_db: "true"
       ytdl_use_twitch_api: "true"
@@ -32,8 +32,8 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.yt.entrypoints: websecure
-      traefik.http.routers.yt.middlewares: ${TRAEFIK_MIDDLEWARES}
-      traefik.http.routers.yt.rule: "Host(`${YTDL_HOSTNAME}`)"
+      traefik.http.routers.yt.middlewares: ${TRAEFIK_MIDDLEWARES:-}
+      traefik.http.routers.yt.rule: "Host(`${YTDLM_HOSTNAME}`)"
       traefik.http.routers.yt.service: yt
       traefik.http.routers.yt.tls: true
       traefik.http.services.yt.loadbalancer.server.port: 17442

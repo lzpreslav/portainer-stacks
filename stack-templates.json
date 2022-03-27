@@ -56,37 +56,37 @@
       ],
       "env": [
         {
-          "default": "nightly",
-          "label": "Docker image tag",
-          "name": "YTDL_TAG"
-        },
-        {
           "default": "1000",
           "label": "GID to use the container as",
-          "name": "GID"
+          "name": "GID",
+          "preset": true
         },
         {
           "default": "1000",
           "label": "UID to use the container as",
-          "name": "UID"
+          "name": "UID",
+          "preset": true
         },
         {
           "label": "Hostname of the YoutubeDL-Material frontend",
-          "name": "YTDL_HOSTNAME"
+          "name": "YTDLM_HOSTNAME"
         },
         {
           "default": "",
           "label": "Middlewares to attach to the Traefik proxy",
-          "name": "TRAEFIK_MIDDLEWARES"
+          "name": "TRAEFIK_MIDDLEWARES",
+          "preset": true
         },
         {
           "label": "Youtube API key",
-          "name": "ytdl_youtube_api_key"
+          "name": "ytdl_youtube_api_key",
+          "preset": true
         },
         {
           "default": "appdata",
           "label": "YoutubeDL-Material Appdata volume",
-          "name": "APPDATA_VOLUME"
+          "name": "APPDATA_VOLUME",
+          "preset": true
         },
         {
           "default": "audio",
@@ -105,6 +105,7 @@
         }
       ],
       "description": "Frontend for youtube-dl, used for downloading audio/video from Youtube, Twitch and other media sites.",
+      "note": "Use GID and UID to define whac user/group to run the container as - necessary when mounting binds for media storage.",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
       "platform": "linux",
       "repository": {
