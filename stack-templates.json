@@ -195,40 +195,37 @@
       ],
       "env": [
         {
-          "default": "1.25.8",
-          "label": "Docker image tag",
-          "name": "PLEX_TAG",
-          "preset": true
+          "default": "1000",
+          "label": "GID to run the container as",
+          "name": "PGID"
         },
         {
           "default": "1000",
-          "label": "GID to use the container as",
-          "name": "PGID",
-          "preset": true
-        },
-        {
-          "default": "1000",
-          "label": "UID to use the container as",
-          "name": "PUID",
-          "preset": true
+          "label": "UID to run the container as, MUST have read permissions on the folder and files",
+          "name": "PUID"
         },
         {
           "default": "config",
-          "label": "Plex config volume",
+          "label": "Config volume",
           "name": "CONFIG_VOLUME"
         },
         {
           "default": "media",
           "label": "Plex media volume, should be a bind or NFS mount",
           "name": "MEDIA_VOLUME"
+        },
+        {
+          "default": "",
+          "label": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.",
+          "name": "PLEX_CLAIM"
         }
       ],
       "description": "Stores, organizes, and streams all content, while the clients are the playback applications running on myriad devices and web browsers",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Plex_favicon.png",
       "platform": "linux",
       "repository": {
-        "stackfile": "stacks/plex/docker-stack.yml",
-        "url": "https://github.com/lzpreslav/portainer-stacks"
+        "stackfile": "docker-compose.yml",
+        "url": "https://github.com/lzpreslav/plex-stack"
       },
       "title": "Plex Media Server",
       "type": 3
