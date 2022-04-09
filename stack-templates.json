@@ -150,47 +150,32 @@
       ],
       "env": [
         {
-          "default": "4.4.1",
-          "label": "Docker image tag",
-          "name": "QBITTORRENT_TAG",
-          "preset": true
+          "default": "1000",
+          "label": "UID to run the container as, note that it MUST have ownership of the Downloads volume",
+          "name": "PUID"
         },
         {
           "default": "1000",
-          "label": "GID to use the container as",
-          "name": "PGID",
-          "preset": true
-        },
-        {
-          "default": "1000",
-          "label": "UID to use the container as",
-          "name": "PUID",
-          "preset": true
+          "label": "GID to run the container as",
+          "name": "PGID"
         },
         {
           "default": "Etc/UTC",
           "label": "Timezone",
-          "name": "TZ",
-          "preset": true
+          "name": "TZ"
         },
         {
           "label": "Hostname of the qBittorrent frontend",
           "name": "QBITTORRENT_HOSTNAME"
         },
         {
-          "default": "",
-          "label": "Middlewares to attach to the Traefik proxy",
-          "name": "TRAEFIK_MIDDLEWARES",
-          "preset": true
-        },
-        {
           "default": "config",
-          "label": "qBittorrent config volume",
+          "label": "Config volume",
           "name": "CONFIG_VOLUME"
         },
         {
           "default": "downloads",
-          "label": "qBittorrent downloads volume",
+          "label": "Downloads volume",
           "name": "DOWNLOADS_VOLUME"
         }
       ],
@@ -198,8 +183,8 @@
       "logo": "https://upload.wikimedia.org/wikipedia/commons/6/66/New_qBittorrent_Logo.svg",
       "platform": "linux",
       "repository": {
-        "stackfile": "stacks/qbittorrent/docker-stack.yml",
-        "url": "https://github.com/lzpreslav/portainer-stacks"
+        "stackfile": "docker-compose.yml",
+        "url": "https://github.com/lzpreslav/qbittorrent-stack"
       },
       "title": "qBittorrent",
       "type": 3
