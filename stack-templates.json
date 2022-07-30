@@ -25,12 +25,6 @@
         {
           "label": "Zerotier network to connect to",
           "name": "ZEROTIER_NETWORK"
-        },
-        {
-          "default": "latest",
-          "label": "Docker image tag",
-          "preset": true,
-          "name": "ZEROTIER_TAG"
         }
       ],
       "description": "Zerotier client",
@@ -38,8 +32,8 @@
       "note": "Uses the host network and shares the tun iface",
       "platform": "linux",
       "repository": {
-        "stackfile": "stacks/zerotier/docker-stack.yml",
-        "url": "https://github.com/lzpreslav/portainer-stacks"
+        "stackfile": "docker-compose.yml",
+        "url": "https://github.com/lzpreslav/zerotier-stack"
       },
       "title": "Zerotier",
       "type": 3
